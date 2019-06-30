@@ -20,6 +20,8 @@ Route::get('/', function () {
 // User/provider routes
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/liquidacion', 'HomeController@showLiquidation')->name('liquidation');
+
 
 
 //admin routes

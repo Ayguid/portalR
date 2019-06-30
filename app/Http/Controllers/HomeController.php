@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Liquidation;
 
 class HomeController extends Controller
 {
@@ -30,5 +31,15 @@ class HomeController extends Controller
       ];
 
         return view('user.home')->with('data', $data);
+    }
+
+    public function showLiquidation(Request $request)
+    {
+      $data=[
+        'liquidation'=>Liquidation::find($request->id)
+      ];
+
+      return view('user.liquidation')->with('data', $data);
+
     }
 }

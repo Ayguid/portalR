@@ -11,8 +11,8 @@ class Liquidation_Item extends Model
   protected $fillable = [
     'liquidation_id',
     'nro_liquidacion',
-    'total',
-    'cantidad_de_ordenes',
+    'algo',
+    'otro-algo'
   ];
 
 

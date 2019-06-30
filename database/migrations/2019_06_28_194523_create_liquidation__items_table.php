@@ -17,8 +17,6 @@ class CreateLiquidationItemsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('liquidation_id');
             $table->integer('nro_liquidacion');
-            $table->float('total');
-            $table->integer('cantidad_de_ordenes');
             $table->timestamps();
         });
     }

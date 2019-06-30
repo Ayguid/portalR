@@ -17,6 +17,9 @@ class CreateLiquidationsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('provider_id');
             $table->string('title');
+            $table->integer('nro_liquidacion');
+            $table->float('total');
+            $table->integer('cantidad_de_ordenes');
             $table->string('perdiod_start');
             $table->string('perdiod_end');
             $table->timestamps();

@@ -5,7 +5,6 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          {{-- <div class="card-header">User Dashboard</div> --}}
           <div class="card-header">{{$data['user']->provider->provider_name}} Dashboard</div>
 
           <div class="card-body">
@@ -16,16 +15,16 @@
             @endif
 
             {{-- liquidations list START --}}
-            <ul class="list-group">
-              @foreach ($data['user']->provider->liquidations as $liquidation)
-                <li class="list-group-item"><a href="#">{{$liquidation->title}} &nbsp; {{$liquidation->created_at}}</a></li>
-                  <ul class="list-group">
-                    @foreach ($liquidation->items as $liquidationItem)
-                      <li class="list-group-item">{{$liquidationItem}}</li>
-                    @endforeach
-                  </ul>
+              @foreach ($liquis = $data['user']->provider->liquidations()->paginate(5) as $liquidation)
+                Nro de liquidacion : {{$liquidation->nro_liquidacion}} &nbsp; &nbsp; Fecha :  {{$liquidation->created_at}}
+                <form class="" action="{{route('liquidation')}}" method="post">
+                  @csrf
+                  <input type="text" name="id" value="{{$liquidation->id}}" hidden>
+                  <input type="submit" name="" value="Items : {{$liquidation->items->count()}}">
+                </form>
+                <hr>
               @endforeach
-            </ul>
+              {{$liquis->links()}}
             {{-- liquidations list END  --}}
 
           </div>

@@ -14,6 +14,8 @@ class Liquidation extends Model
     'title',
     'perdiod_start',
     'perdiod_end',
+    'total',
+    'cantidad_de_ordenes'
   ];
 
 
