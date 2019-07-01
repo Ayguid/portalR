@@ -18,7 +18,7 @@
 
             {{--  --}}
             <ul class="list-group">
-              <li class="list-group-item"><a class="btn btn-secondary" href="{{route('showProviders')}}">Proveedores</a></li>
+              <li class="list-group-item"><a class="btn btn-secondary" href="{{route('admin.showProviders')}}">Proveedores</a></li>
             </ul>
 
             @isset($data['provider'])

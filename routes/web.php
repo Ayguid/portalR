@@ -36,7 +36,8 @@ Route::prefix('admin')->group(function(){
   Route::post('password/reset', 'Auth\AdminResetPasswordController@reset');
   Route::get('password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
   //provider routes
-  Route::get('/proveedores', 'ProviderController@index')->name('showProviders');
-  Route::get('/proveedor/{id}', 'ProviderController@show')->name('showProvider');
+  Route::get('/proveedores', 'ProviderController@index')->name('admin.showProviders');
+  Route::get('/proveedor/{id}', 'ProviderController@show')->name('admin.showProvider');
+  Route::post('/addProvider', 'ProviderController@store')->name('admin.addProvider');
 
 });
